@@ -73,15 +73,3 @@ multMatrices xs ys =
 	      cols = snd ysSize
 	      rows = fst xsSize
 	      compatibleMatrices = snd xsSize == fst ysSize 
-
-
-
-
-
-
-
-
-
-	      
-	
-

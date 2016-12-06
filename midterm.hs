@@ -18,7 +18,8 @@ sameLetterTwiceInARow word =
         check a (x:xs) = (a == x) || (check x xs)
 
 hasOverFourVowels :: String -> Bool
-hasOverFourVowels word = length(filter (\x -> x `elem` "aeiou") word) >= 4
+hasOverFourVowels word = length (filter isVowel word) >= 4
+  where isVowel = (`elem` "aeiou")
 
 removeNumbers :: String -> String
 removeNumbers word = filter isNotNumber word

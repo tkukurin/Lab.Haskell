@@ -25,8 +25,8 @@ removeNumbers word = filter isNotNumber word
   where isNumber = (`elem` "1234567890")
         isNotNumber x = not $ isNumber x
 
-weirdFilterApply word = not (hasVowel word)
-                          && not (sameLetterTwiceInARow word)
+weirdFilterApply :: String -> Bool
+weirdFilterApply word = not (hasVowel word) && not (sameLetterTwiceInARow word)
 
 weirdFilter :: [String] -> [String]
 weirdFilter xs = filter weirdFilterApply $ map removeNumbers xs

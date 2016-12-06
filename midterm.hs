@@ -17,8 +17,8 @@ sameLetterTwiceInARow word =
   where check _ []     = False
         check a (x:xs) = (a == x) || (check x xs)
 
-hasVowel :: String -> Bool
-hasVowel word = length(filter (\x -> x `elem` "aeiou") word) >= 4
+hasOverFourVowels :: String -> Bool
+hasOverFourVowels word = length(filter (\x -> x `elem` "aeiou") word) >= 4
 
 removeNumbers :: String -> String
 removeNumbers word = filter isNotNumber word
@@ -26,7 +26,7 @@ removeNumbers word = filter isNotNumber word
         isNotNumber x = not $ isNumber x
 
 weirdFilterApply :: String -> Bool
-weirdFilterApply word = not (hasVowel word) && not (sameLetterTwiceInARow word)
+weirdFilterApply word = not (hasOverFourVowels word) && not (sameLetterTwiceInARow word)
 
 weirdFilter :: [String] -> [String]
 weirdFilter xs = filter weirdFilterApply $ map removeNumbers xs

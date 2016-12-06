@@ -50,7 +50,3 @@ applyManyTimes n f x = f $ applyManyTimes (n-1) f x
 listifyList = map (:[])
 cutoff n = takeWhile (/=n)
 
-
-
-
-

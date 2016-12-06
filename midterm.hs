@@ -36,6 +36,6 @@ weirdFilter xs = filter weirdFilterApply $ map removeNumbers xs
 gcd' :: Int -> Int -> Int
 gcd' a b
   | b == 0 = a
-  | b > a  = gcd a (b-a)
-  | otherwise = gcd b (a-b)
+  | b > a  = gcd' a (b-a)
+  | otherwise = gcd' b (a-b)
 
